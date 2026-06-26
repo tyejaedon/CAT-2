@@ -1,0 +1,97 @@
+:root {
+    --primary-color: #2E7D32; /* High contrast green */
+    --primary-hover: #1B5E20;
+    --bg-color: #F1F8E9;
+    --text-color: #1a1a1a;
+    --focus-outline: #81C784;
+}
+
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* Container for responsive layout */
+main {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 1. Heading "Save Our Wildlife" */
+header h1 {
+    color: var(--primary-color);
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive typography */
+    margin-bottom: 1.5rem;
+}
+
+/* 2. Responsive Video Container */
+.video-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background-color: #000; /* Fallback for missing video */
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper.hidden {
+    display: none;
+}
+
+/* Ensures video shrinks and grows with the container */
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 3. Short description */
+.description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Accessible Button */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--focus-outline);
+    outline-offset: 2px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
